@@ -18,7 +18,8 @@ export const INITIAL_STATE = Immutable({
   avatar: null,
   fetching: null,
   error: null,
-  username: null
+  username: null,
+  message: "Message 2"
 })
 
 /* ------------- Selectors ------------- */
@@ -31,12 +32,12 @@ export const GithubSelectors = {
 
 // request the avatar for a user
 export const request = (state, { username }) =>
-  state.merge({ fetching: true, username, avatar: null })
+  state.merge({ fetching: true, username, avatar: null, message: "NEW MESSAGE WOO" })
 
 // successful avatar lookup
 export const success = (state, action) => {
   const { avatar } = action
-  return state.merge({ fetching: false, error: null, avatar })
+  return state.merge({ fetching: false, error: null, avatar})
 }
 
 // failed to get the avatar

@@ -5,7 +5,7 @@ import GithubActions from '../Redux/GithubRedux'
 export function * getUserAvatar (api, action) {
   const { username } = action
   // make the call to the api
-  const response = yield call(api.getUser, username)
+  //const response = yield call(api.getUser, username)
 
   if (response.ok) {
     const firstUser = path(['data', 'items'], response)[0]
@@ -15,4 +15,5 @@ export function * getUserAvatar (api, action) {
   } else {
     yield put(GithubActions.userFailure())
   }
+  yield put(GithubActions.userFailure())
 }
