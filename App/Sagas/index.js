@@ -13,7 +13,7 @@ import { MopidyTypes } from '../Redux/MopidyRedux'
 
 import { startup } from './StartupSagas'
 import { getUserAvatar } from './GithubSagas'
-import { test, getMopidy } from './MopidySagas'
+import { test, getMopidy, startSocket } from './MopidySagas'
 
 /* ------------- API ------------- */
 
@@ -30,6 +30,7 @@ export default function * root () {
 
     // some sagas receive extra parameters in addition to an action
     takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
-    takeLatest(MopidyTypes.MOPIDY_REQUEST, getMopidy)
+    //takeLatest(MopidyTypes.MOPIDY_REQUEST, getMopidy),
+    takeLatest(MopidyTypes.OPEN_SOCKET, startSocket)
   ])
 }

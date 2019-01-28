@@ -14,5 +14,5 @@ export function * startup (action) {
   //   //yield put(GithubActions.userRequest('GantMan'))
   // }
   //yield put(GithubActions.userRequest('GantMan'))
-  yield put(MopidyActions.mopidyRequest())
+  yield put(MopidyActions.openSocket())
 }

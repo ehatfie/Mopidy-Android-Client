@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Button, Container, Card, CardBody, View } from 'native-base';
-import MopidyConnect from '../Components/HomeScreen/MopidyConnect';
+import MopidyConnect from '../Components/HomeScreen/MopidyConnect.js';
+import MopidyActions from '../Redux/MopidyRedux';
 //import Mopidy from 'mopidy'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
@@ -22,6 +23,7 @@ class HomeScreen extends Component {
     this.testFunction = this.testFunction.bind(this)
     this.buttonFunction = this.buttonFunction.bind(this)
     this.printCurrentTrack = this.printCurrentTrack.bind(this)
+
   }
 
   testFunction(){
@@ -38,6 +40,7 @@ class HomeScreen extends Component {
   }
 
   printCurrentTrack(track) {
+    this.props.setPlaylists(track)
     this.setState({message3: track, isPlaying: "WE TRIED"})
   }
 
@@ -50,9 +53,9 @@ class HomeScreen extends Component {
         <Card>
           <Text>HomeScreen Container {JSON.stringify(this.props.message)} AND {JSON.stringify(this.props.message2)}</Text>
           <Text>Response: {this.state.message3} AND {this.state.isPlaying}</Text>
-        </Card> 
+        </Card>
         <Card>
-          <Button onPress={this.testFunction} title={"PRESS ME"}>
+          <Button onPress={this.props.testDispatch} title={"PRESS ME"}>
             <Text>
               Press Me
             </Text>
@@ -73,6 +76,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    testDispatch: () => {
+      dispatch(MopidyActions.updateMessage("HHHH"))
+    },
+    callSaga: () => {
+      dispatch(MopidyActions.updateMessage("YYYY"))
+    },
+    setPlaylists: (data) => {
+      dispatch(MopidyActions.setPlaylists(data))
+    }
   }
 }
 

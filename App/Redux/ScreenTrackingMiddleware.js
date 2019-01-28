@@ -24,6 +24,7 @@ const screenTracking = ({ getState }) => next => (action) => {
   const currentScreen = getCurrentRouteName(getState().nav)
   const result = next(action)
   const nextScreen = getCurrentRouteName(getState().nav)
+  
   if (nextScreen !== currentScreen) {
     try {
       console.tron.log(`NAVIGATING ${currentScreen} to ${nextScreen}`)
