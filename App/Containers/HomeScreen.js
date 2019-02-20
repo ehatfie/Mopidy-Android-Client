@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Button, Container, Card, CardBody, View } from 'native-base';
+
+import SideMenu from '../Components/SideMenu/SideMenu'
 import MopidyConnect from '../Components/HomeScreen/MopidyConnect.js';
 import MopidyActions from '../Redux/MopidyRedux';
 //import Mopidy from 'mopidy'

@@ -12,6 +12,7 @@ createReactNavigationReduxMiddleware(
   (state) => state.nav
 )
 
+
 const ReduxAppNavigator = reduxifyNavigator(AppNavigation, 'root')
 
 class ReduxNavigation extends React.Component {
