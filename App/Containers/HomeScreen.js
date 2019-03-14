@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { Button, Container, Card, CardBody, View } from 'native-base';
+import { Button, Container, Card, CardBody, Image, View } from 'native-base';
 
 import SideMenu from '../Components/SideMenu/SideMenu'
 import MopidyConnect from '../Components/HomeScreen/MopidyConnect.js';
@@ -27,6 +27,16 @@ class HomeScreen extends Component {
     this.printCurrentTrack = this.printCurrentTrack.bind(this)
 
   }
+
+  // static navigationOptions = {
+  //   drawerLabel: 'Home',
+  //   drawerIcon: () => (
+  //     <Image
+  //       source={require('../Images/Icons/close-button.png')}
+  //       style={ styles.icon }
+  //     />
+  //   ),
+  // };
 
   testFunction(){
     // call api and update state
