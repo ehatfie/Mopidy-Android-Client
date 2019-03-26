@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, View, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 import PlaylistCard from '../Components/Playlist/PlaylistCard'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
@@ -18,18 +18,29 @@ class Playlists extends Component {
     let val = new Map(this.props.test)
     let playlistsMap = this.props.test.map((playlist) => <PlaylistCard name={playlist.name} />)
     console.log(val)
+
     return (playlistsMap)
 
   }
 
 
   render () {
-    //this.test()
+    // this.test()
     return (
       <View style={styles.container}>
-        <Text>Playlists Container</Text>
-        <Text>{JSON.stringify(this.props.test)}</Text>
-        {this.test()}
+        <FlatList
+          data={[
+            {key: 'Devin'},
+            {key: 'Jackson'},
+            {key: 'James'},
+            {key: 'Joel'},
+            {key: 'John'},
+            {key: 'Jillian'},
+            {key: 'Jimmy'},
+            {key: 'Julie'}
+          ]}
+          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+        />
       </View>
     )
   }

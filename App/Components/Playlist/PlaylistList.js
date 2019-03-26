@@ -34,7 +34,7 @@ export default class PlaylistList extends Component {
   _renderItem = ({item}) => {
     <ListItem
       id={item.id}
-      onPressItem={{this._onPressItem}
+      onPressItem={{this._onPressItem}}
       selected={!this.state.selected.get(item.id)}
       title=item.title}
       />
