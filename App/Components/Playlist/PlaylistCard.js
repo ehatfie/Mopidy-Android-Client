@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Card, CardItem } from 'native-base'
 // import PropTypes from 'prop-types';
 import { View, Text } from 'react-native'
-import styles from './Styles/ListItemStyle'
+import styles from '../Styles/Playlist/PlaylistCardStyle'
 
-export default class ListItem extends Component {
+export default class PlaylistCard extends Component {
   // // Prop type warnings
   // static propTypes = {
   //   someProperty: PropTypes.object,
@@ -18,7 +19,9 @@ export default class ListItem extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text>ListItem Component</Text>
+       <Card>
+         <Text>{this.props.name}</Text>
+       </Card>
       </View>
     )
   }

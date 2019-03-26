@@ -2,7 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'https://192.168.1.209:6680/mopidy/rpc') => {
+const create = (baseURL = 'https://192.168.1.208:6680/mopidy/rpc') => {
   // ------
   // STEP 1
   // ------

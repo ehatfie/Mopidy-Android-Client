@@ -50,7 +50,7 @@ export function * startSocket () {
   
   //yield put(MopidyActions.setMessage("ggg"))
   //yield put(this.watcher);
-  yield call(watcher)
+  // yield call(watcher)
 }
 
 export function * endSocket () {
@@ -71,10 +71,10 @@ export function * watcher () {
     
   // }
 
-  while (true) {
-    yield take(MopidyTypes.UPDATE_MESSAGE)
-    yield call(taker)
-  }
+  // while (true) {
+  //   yield take(MopidyTypes.UPDATE_MESSAGE)
+  //   yield call(taker)
+  // }
 }
 
 export function * taker() {

@@ -5,9 +5,6 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Metrics.navBarHeight,
-    backgroundColor: 'white'
-  },
-  icon: {
-    flex:2
+    backgroundColor: '#6ED4C8'
   }
 })

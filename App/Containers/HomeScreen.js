@@ -65,6 +65,7 @@ class HomeScreen extends Component {
         <Card>
           <Text>HomeScreen Container {JSON.stringify(this.props.message)} AND {JSON.stringify(this.props.message2)}</Text>
           <Text>Response: {this.state.message3} AND {this.state.isPlaying}</Text>
+          <Text>playlists: {JSON.stringify(this.props.test)}</Text>
         </Card>
         <Card>
           <Button onPress={this.props.testDispatch} title={"PRESS ME"}>
@@ -73,7 +74,7 @@ class HomeScreen extends Component {
             </Text>
           </Button>
         </Card>
-        <MopidyConnect sendResponse={this.printCurrentTrack}/>
+        <MopidyConnect sendResponse={this.printCurrentTrack} />
       </View>
     )
   }
@@ -82,6 +83,7 @@ class HomeScreen extends Component {
 const mapStateToProps = (state) => {
   return {
     message: state.mopidy,
+    test: state.mopidy.playlists,
     message2: state.github
   }
 }

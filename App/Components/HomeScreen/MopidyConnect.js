@@ -27,7 +27,7 @@ export default class MopidyConnect extends Component {
       message: "NOPE"
     }
     
-    this.socket = new WebSocket('http://192.168.1.209:6680/mopidy/ws');
+    this.socket = new WebSocket('http://192.168.1.208:6680/mopidy/ws');
     //this.socket = new WebSocket('ws://echo.websocket.org/');
 
     this.emit = this.emit.bind(this);
